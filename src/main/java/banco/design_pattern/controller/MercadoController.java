@@ -16,8 +16,9 @@ public class MercadoController {
     private MercadoService mercadoService;
 
     @GetMapping
-    public List<IMercado> listarTodas() {
-        return mercadoService.listarTodas();
+    public List<Carrefour> listarTodas() {
+        var lista = mercadoService.listarTodas();
+        return lista;
     }
 
     @PostMapping

@@ -1,8 +1,20 @@
 package banco.design_pattern.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Produto {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     private String nome;
     private int quantidade;
+
+    public Produto() {}
 
     public Produto(String nome, int qnt){
         this.nome = nome;

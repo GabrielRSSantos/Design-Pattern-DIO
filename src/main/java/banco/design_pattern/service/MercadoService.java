@@ -1,5 +1,6 @@
 package banco.design_pattern.service;
 
+import banco.design_pattern.model.Carrefour;
 import banco.design_pattern.model.IMercado;
 import banco.design_pattern.repository.MercadoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,15 +15,15 @@ public class MercadoService {
     @Autowired
     private MercadoRepository mercadoRepository;
 
-    public List<IMercado> listarTodas() {
-        return (List<IMercado>) mercadoRepository.findAll();
+    public List<Carrefour> listarTodas() {
+        return (List<Carrefour>) mercadoRepository.findAll();
     }
 
-    public Optional<IMercado> buscarPorId(int id) {
+    public Optional<Carrefour> buscarPorId(int id) {
         return mercadoRepository.findById(id);
     }
 
-    public IMercado salvar(IMercado mercado) {
+    public Carrefour salvar(Carrefour mercado) {
         return mercadoRepository.save(mercado);
     }
 
